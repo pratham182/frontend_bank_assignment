@@ -1,0 +1,54 @@
+import React, { useState, useEffect } from 'react';
+import Navbar from '../Component/Navbar';
+import BankList from '../Component/BankList';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+
+const AdminDashboard = () => {
+  const [banks, setBanks] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
+
+  useEffect(() => {
+    const fetchBanks = async () => {
+      try {
+        
+        const response = await axios.get('http://localhost:2000/api/getAllAccounts'); 
+console.log(response)
+        if (response.data.success) {
+          setBanks(response.data); 
+        } else {
+          toast.error(response.data.message || 'Error fetching bank accounts');
+        }
+      } catch (err) {
+        console.error(err);
+        // setError('Error connecting to server');
+        // toast.error('Error connecting to server');
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchBanks();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // Show loading message while data is being fetched
+  }
+
+  if (error) {
+    return <div>{error}</div>; // Display error message if there's an error
+  }
+
+  return (
+    <>
+      <Navbar />
+      <div className="admin-dashboard">
+        <h2>Users and Bank Accounts detail</h2>
+        <BankList  type="admin" banks={banks} />
+      </div>
+    </>
+  );
+};
+
+export default AdminDashboard;

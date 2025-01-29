@@ -1,0 +1,198 @@
+
+
+.dashboard {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem; 
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem; 
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+ 
+  .bank-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .bank-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); 
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+  }
+  
+  .bank-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .bank-item h3 {
+    font-size: 1.25rem; 
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .bank-item p {
+    font-size: 1rem; 
+    color: #555;
+  }
+  
+  .bank-item button {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .bank-item button:hover {
+    background-color: #d32f2f;
+  }
+  
+
+  .add-bank-button {
+    display: inline-block;
+    margin-top: 0px;
+    padding: 10px 15px;
+    background-color: #3797f0;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .add-bank-link:hover {
+    background-color: #2979d9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .bank-item {
+      width: calc(50% - 20px); 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 15px;
+    }
+  
+    .bank-item {
+      width: 100%; 
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    .add-bank-link {
+      font-size: 1rem; 
+      padding: 8px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem; 
+    }
+  
+    .add-bank-link {
+      font-size: 0.875rem; 
+      padding: 8px 10px;
+    }
+  }
+  
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #3797f0;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+
+td a {
+  text-decoration: none;
+  color: #3797f0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+td a:hover {
+  color: #2979d9;
+}
+.dashboard h2{
+  color: black;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
