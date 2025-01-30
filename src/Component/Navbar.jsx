@@ -13,7 +13,10 @@ const Navbar = () => {
       console.log(result);
 
       if (result.success) {
-        navigate('/');  
+        clearCookie('jwt', '/', "https://frontend-bank-assignment.vercel.app/");
+
+
+        navigate('/login');  
       } else {
         console.error("Logout failed", result.message);
       }
