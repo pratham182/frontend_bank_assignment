@@ -13,9 +13,9 @@ const Navbar = () => {
       console.log(result);
 
       if (result.success) {
-        clearCookie('jwt', '/', "https://frontend-bank-assignment.vercel.app/");
+        // clearCookie('jwt', '/', "https://frontend-bank-assignment.vercel.app/");
 
-        console.log("Yess");
+
         window.location.href = "/login";
             } else {
         console.error("Logout failed", result.message);
