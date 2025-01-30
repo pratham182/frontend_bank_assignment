@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AuthForm from '../Component/AuthForm'; // Importing the reusable form component
+import AuthForm from '../Component/AuthForm'; 
 import ButtonBar from '../Component/ButtonBar';
 
 const Login = () => {
