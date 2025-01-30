@@ -48,7 +48,9 @@ const AuthForm = ({ type, redirectUrl }) => {
     const response = await auth(formData, type);
 
     if (response.success) {
-      window.location.href = redirectUrl; 
+
+      console.log(response)
+      // window.location.href = redirectUrl; 
       // setError(response.message || 'An unknown error occurred');
     }
     else{
