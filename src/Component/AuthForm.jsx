@@ -51,10 +51,10 @@ const AuthForm = ({ type, redirectUrl }) => {
 
       console.log(response)
 
-      setTimeout(()=>{
+      
         window.location.href = redirectUrl; 
 
-      },1000)
+     
       
       // setError(response.message || 'An unknown error occurred');
     }
