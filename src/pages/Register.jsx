@@ -4,6 +4,7 @@ import { auth } from '../api';
 import { validateRegister } from '../validation'; 
 
 import '../styles/AuthStyle.css';
+import ButtonsBar from '../Component/ButtonBar';
 
 
 const Register = () => {
@@ -44,6 +45,7 @@ const Register = () => {
 
   return (
     <>
+    <ButtonsBar/>
      <div className="auth-container">
       <h2 style={{ color: 'white' }}>Register</h2>
       <form onSubmit={handleSubmit}>
