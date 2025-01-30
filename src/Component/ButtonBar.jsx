@@ -35,4 +35,4 @@ const ButtonBar = () => {
     },
   };
 
-  export default ButtonsBar;
+  export default ButtonBar;
