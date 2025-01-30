@@ -20,8 +20,8 @@ const BankList = ({ banks, handleEdit, handleDelete, type }) => {
           </tr>
         </thead>
         <tbody>
-          {banks.data.length > 0 ? (
-            banks.data.map((bank) => (
+          {banks.length > 0 ? (
+            banks.map((bank) => (
               <tr key={bank._id}>
                  {type == 'admin' && <td>
               {bank.user.username}
@@ -34,7 +34,7 @@ const BankList = ({ banks, handleEdit, handleDelete, type }) => {
                 {type === 'user' && ( 
                   <td>
                     <button onClick={() => handleEdit(bank._id)} className="edit-btn">Edit</button>
-                    <button onClick={() => handleDelete(bank._id)} className="delete-btn">Delete</button>
+                    <button style={{marginLeft:"0.5rem"}} onClick={() => handleDelete(bank._id)} className="delete-btn">Delete</button>
                   </td>
                 )}
               </tr>

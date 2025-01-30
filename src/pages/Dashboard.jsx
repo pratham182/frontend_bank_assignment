@@ -25,6 +25,8 @@ const Dashboard = () => {
       try {
         const response = await getBanks();
         if (response.success) {
+
+          console.log(response)
           setBanks(response.data.data.accounts);
         } else {
           toast.error(response.message || 'Error fetching bank accounts');
@@ -125,7 +127,7 @@ const Dashboard = () => {
 
         {error && <div className="error-message">{error}</div>}
 
-        <BankList banks={banks} handleEdit={handleEdit} handleDelete={handleDelete}/>
+        <BankList type="user" banks={banks} handleEdit={handleEdit} handleDelete={handleDelete}/>
 
         {isModalOpen && (
           <Modal

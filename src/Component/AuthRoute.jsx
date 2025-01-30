@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const backendUrl = 'http://localhost:2000';
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:2000";
+
 
 const AuthRoute = ({ isPublic, element }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);

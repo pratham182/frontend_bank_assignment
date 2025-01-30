@@ -12,18 +12,19 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchBanks = async () => {
       try {
+
         
         const response = await axios.get('http://localhost:2000/api/getAllAccounts'); 
-console.log(response)
+
         if (response.data.success) {
-          setBanks(response.data); 
+console.log(response.data.data)
+          setBanks(response.data.data); 
         } else {
           toast.error(response.data.message || 'Error fetching bank accounts');
         }
       } catch (err) {
         console.error(err);
-        // setError('Error connecting to server');
-        // toast.error('Error connecting to server');
+        
       } finally {
         setLoading(false); 
       }
