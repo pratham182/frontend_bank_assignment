@@ -4,6 +4,9 @@ import BankList from '../Component/BankList';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:2000";
+
+
 const AdminDashboard = () => {
   const [banks, setBanks] = useState([]);
   const [loading, setLoading] = useState(true); 
@@ -14,7 +17,7 @@ const AdminDashboard = () => {
       try {
 
         
-        const response = await axios.get('http://localhost:2000/api/getAllAccounts'); 
+        const response = await axios.get(`${backendUrl}/api/getAllAccounts`); 
 
         if (response.data.success) {
 console.log(response.data.data)

@@ -47,7 +47,7 @@ const AuthForm = ({ type, redirectUrl }) => {
 
     const response = await auth(formData, type);
 
-    if (response.success) {
+    if (response?.success  ) {
 
       console.log(response)
       // window.location.href = redirectUrl; 
